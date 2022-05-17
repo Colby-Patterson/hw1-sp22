@@ -105,8 +105,15 @@ const isSorted = (numbers) => {
   let secondNumIndex = 1;
   for (let i = 0; i < numbers.length; i++) {
     if (numbers[secondNumIndex] - numbers[firstNumIndex] >= 0) {
-      // TODO
+      firstNumIndex++;
+      secondNumIndex++;
     }
+  }
+  if (secondNumIndex === numbers.length) {
+    return true;
+  }
+  else {
+    return false;
   }
 };
 

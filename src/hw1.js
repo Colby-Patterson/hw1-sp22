@@ -1,55 +1,113 @@
 //function that takes a number and doubles it
 // yarn jest -t 'test doubleNumber'
 const doubleNumber = (num) => {
-  // TODO
+  return num * 2;
 };
 
 /// function that takes a number and returns 'odd' or 'even'
 // yarn jest -t 'test isOddOrEven'
 const isOddOrEven = (num) => {
-      // TODO
+  if (num % 2 === 0) {
+    return 'even';
+  } else {
+    return 'odd';
+  }
 };
 
 //function that return a random number 0-5
 // yarn jest -t 'test randomNumber'
 const randomNumber = () => {
-  // TODO
+  return Math.floor(Math.random() * 6);
 };
 
 /// function that takes two numbers num and 'opp'
 /// opp can be +, -, /, or *
-// yarn jest -t 'test randomNumber'
+// yarn jest -t 'test calc'
 const calc = (num1, num2, opp) => {
-  // TODO
+  switch(opp) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      return num1 / num2;
+  }
 };
 
 //function that takes a string and return the number of vowels it has
 // *lowercase only, and never count y
 // yarn jest -t 'test vowelCount'
 const vowelCount = (str) => {
-  // TODO
+  let numVowels = 0;
+  let letters = str.split('');
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] === 'a') {
+      numVowels ++;
+    } 
+    else if (letters[i] === 'e') {
+      numVowels++;
+    }
+    else if (letters[i] === 'i') {
+      numVowels++;
+    }
+    else if (letters[i] === 'o') {
+      numVowels++;
+    }
+    else if (letters[i] === 'u') {
+      numVowels++;
+    }
+  }
+
+  return numVowels;
 };
 
 /// function that takes an array of numbers and returns sum
 // yarn jest -t 'test getSum'
 const getSum = (numbers) => {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  return sum;
 };
 
 /// function that takes an array of numbers and returns highest num
 // yarn jest -t 'test getHighNum'
 const getHighNum = (numbers) => {
-  // TODO
+  let highNum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > highNum) {
+      highNum = numbers[i];
+    }
+  }
+
+  return highNum;
 };
 /// function that takes an array of numbers and returns lowest num
-// yarn jest -t 'test getLowNum'
+// yarn jest -t 'test getLow'
 const getLowNum = (numbers) => {
-  // TODO
+  let lowNum = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < lowNum) {
+      lowNum = numbers[i];
+    }
+  }
+
+  return lowNum;
 };
 /// function that takes an array of numbers and returns true if sorted (low to high only)
 // yarn jest -t 'test isSorted'
 const isSorted = (numbers) => {
-  // TODO
+  let firstNumIndex = 0;
+  let secondNumIndex = 1;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[secondNumIndex] - numbers[firstNumIndex] >= 0) {
+      // TODO
+    }
+  }
 };
 
 //  write a function that takes a number (0-100)
@@ -59,7 +117,18 @@ const isSorted = (numbers) => {
 //  return the number if none apply
 // yarn jest -t 'test fizzbuzz'
 const fizzbuzz = (num) => {
-    //TODO
+    if (num % 3 === 0 && num % 5 === 0) {
+    return 'fizzbuzz';
+    }
+    else if (num % 3 === 0) {
+      return 'fizz';
+    }
+    else if (num % 5 === 0) {
+      return 'buzz';
+    }
+    else {
+      return num;
+    }
 };
 
 module.exports = {

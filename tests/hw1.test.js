@@ -12,7 +12,8 @@ import {
     isOddOrEven,
     isSorted,
     vowelCount,
-    randomNumber
+    randomNumber,
+    calc
   } from "../src/hw1";
   
   it("test doubleNumber", () => {
@@ -99,4 +100,16 @@ import {
     expect(returnValue3).toBe("buzz");
     expect(returnValue4).toBe("fizzbuzz");
     expect(returnValue5).toBe(4);
+  });
+
+  it("test calc", () => {
+    let returnValue1 = calc(2,2,'+');
+    let returnValue2 = calc(2,2,'-');
+    let returnValue3 = calc(2,3,'*');
+    let returnValue4 = calc(2,2,'/');
+  
+    expect(returnValue1).toBe(4);
+    expect(returnValue2).toBe(0);
+    expect(returnValue3).toBe(6);
+    expect(returnValue4).toBe(1);
   });

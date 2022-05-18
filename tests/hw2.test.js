@@ -13,7 +13,7 @@ it("test addItemToArray", () => {
     expect(x).toBe(undefined);
   });
 
-  it("test addItemToArray", () => {
+  it("test addItemToANewArray", () => {
     let arr = ['b','d']
     // this function should return a new array
     let x = addItemToANewArray(arr,'c',1)

@@ -35,11 +35,11 @@
       return num % 2 === 0
   };
   
-  // part 2 use the method from above to double numbers in new array
+   // part 2 use the method from above to remove odd numbers from array
   /**
-   * doubles numbers from given array into a new array
-   * @param  {[number]} arr: an array of numbers to be doubled
-   * @return {[number]} a NEW array with numbers doubled
+   * removes odd numbers from array
+   * @param  {[number]} arr: an array of numbers 
+   * @return {[number]} a NEW array with only even numbers
    */
   const filterEvens = (arr) => {
     let evensArray = arr.filter(isEven)

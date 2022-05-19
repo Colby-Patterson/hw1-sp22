@@ -90,19 +90,19 @@ function getFemaleChars(people){
 
 //***SORT***
 //1. Sort by mass
-function sortByMass(characters){
+function sortByMass(people){
   return characters.sort((a, b)=> {
     return a.mass - b.mass
   })
 }
 //2. Sort by height
-function sortByHeight(characters){
+function sortByHeight(people){
   return characters.sort((a, b)=> {
     return a.height - b.height
   })
 }
 //3. Sort by name
-function sortByName(characters){
+function sortByName(people){
   return characters.sort((a, b)=> {
     if (a.name > b.name){
       return 1
@@ -114,7 +114,7 @@ function sortByName(characters){
   })
 }
 //4. Sort by gender
-function sortByGender(characters){
+function sortByGender(people){
   return characters.sort((a, b)=> {
     if (a.gender > b.gender){
       return 1
@@ -128,9 +128,29 @@ function sortByGender(characters){
 
 //***EVERY***
 //1. Does every character have blue eyes?
+function blueEyesCheck(people){
+  return people.every(person=>{
+    return person.eye_color === 'blue'
+  })
+}
 //2. Does every character have mass more than 40?
+function massOver40Check(people){
+  return people.every(person=>{
+    return person.mass > 40
+  })
+}
 //3. Is every character shorter than 200?
+function heightUnder200Check(people){
+  return people.every(person=>{
+    return person.height < 200
+  })
+}
 //4. Is every character male?
+function allMaleCheck(people){
+  return people.every(person=>{
+    return person.gender === 'male'
+  })
+}
 
 //***SOME***
 //1. Is there at least one male character?
@@ -154,5 +174,9 @@ module.exports = {
   sortByMass,
   sortByHeight,
   sortByName,
-  sortByGender
+  sortByGender,
+  blueEyesCheck,
+  massOver40Check,
+  heightUnder200Check,
+  allMaleCheck
 };

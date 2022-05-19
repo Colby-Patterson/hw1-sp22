@@ -1,4 +1,4 @@
-const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender } = require("../src/hw4.js");
+const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck } = require("../src/hw4.js");
 
 it('tests map functions', ()=>{
   // Testing getNames function
@@ -60,4 +60,22 @@ it('tests sort functions', ()=>{
   let sortedByGender = sortByGender(characters)
   expect(sortedByGender[0].gender).toEqual('female')
   expect(sortedByGender[3].gender).toEqual('male')
+})
+
+it('tests every functions', ()=>{
+  // Testing blueEyesCheck function
+  let allBlueEyes = blueEyesCheck(characters)
+  expect(allBlueEyes).toBe(false)
+
+  // Testing massOver40Check function
+  let allMassOver40 = massOver40Check(characters)
+  expect(allMassOver40).toBe(true)
+
+  // Testing heightUnder200Check function
+  let allHeightUnder200 = heightUnder200Check(characters)
+  expect(allHeightUnder200).toBe(false)
+
+  // Testing allMaleCheck function
+  let allMale = allMaleCheck(characters)
+  expect(allMale).toBe(false)
 })

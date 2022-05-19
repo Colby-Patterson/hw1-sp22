@@ -58,8 +58,21 @@ function getFirstNames(people){
 
 //***REDUCE***
 //1. Get total mass of all characters
+function totalMass(people){
+  return people.reduce(function(previous, current){
+    return previous += current.mass
+  },0)
+}
 //2. Get total height of all characters
+function totalHeight(people){
+  return people.reduce(function(previous, current){
+    return previous += current.height
+  },0)
+}
 //3. Get total number of characters by eye color
+function byEyeColor(people){
+  
+}
 //4. Get total number of characters in all the character names
 
 //***FILTER***
@@ -202,5 +215,7 @@ module.exports = {
   atLeastOneMale,
   atLeastOneBlueEyes,
   oneTallerThan210,
-  oneMassLessThan50
+  oneMassLessThan50,
+  totalMass,
+  totalHeight
 };

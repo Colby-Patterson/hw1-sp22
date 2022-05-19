@@ -1,4 +1,4 @@
-const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck, atLeastOneMale, atLeastOneBlueEyes, oneTallerThan210, oneMassLessThan50 } = require("../src/hw4.js");
+const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck, atLeastOneMale, atLeastOneBlueEyes, oneTallerThan210, oneMassLessThan50, totalMass, totalHeight } = require("../src/hw4.js");
 
 it('tests map functions', ()=>{
   // Testing getNames function
@@ -96,4 +96,14 @@ it('tests "some" functions', ()=>{
   // Testing massLessThan50 function
   let massUnder50 = oneMassLessThan50(characters)
   expect(massUnder50).toBe(true)
+})
+
+it('tests reduce functions', ()=>{
+  // Testing totalMass function
+  let totalMassOfCharacters = totalMass(characters)
+  expect(totalMassOfCharacters).toBe(346)
+
+  //Testing totalHeight function
+  let totalHeightOfCharacters = totalHeight(characters)
+  expect(totalHeightOfCharacters).toBe(712)
 })

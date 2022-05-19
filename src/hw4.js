@@ -154,9 +154,29 @@ function allMaleCheck(people){
 
 //***SOME***
 //1. Is there at least one male character?
+function atLeastOneMale(people){
+  return people.some(person=>{
+    return person.gender === 'male'
+  })
+}
 //2. Is there at least one character with blue eyes?
+function atLeastOneBlueEyes(people){
+  return people.some(person=>{
+    return person.eye_color === 'blue'
+  })
+}
 //3. Is there at least one character taller than 210?
+function oneTallerThan210(people){
+  return people.some(person=>{
+    return person.height > 210
+  })
+}
 //4. Is there at least one character that has mass less than 50?
+function oneMassLessThan50(people){
+  return people.some(person=>{
+    return person.mass < 50
+  })
+}
 
 //***Bonus***/
 // come up with your own
@@ -178,5 +198,9 @@ module.exports = {
   blueEyesCheck,
   massOver40Check,
   heightUnder200Check,
-  allMaleCheck
+  allMaleCheck,
+  atLeastOneMale,
+  atLeastOneBlueEyes,
+  oneTallerThan210,
+  oneMassLessThan50
 };

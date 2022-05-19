@@ -1,4 +1,4 @@
-const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck } = require("../src/hw4.js");
+const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck, atLeastOneMale, atLeastOneBlueEyes, oneTallerThan210, oneMassLessThan50 } = require("../src/hw4.js");
 
 it('tests map functions', ()=>{
   // Testing getNames function
@@ -62,7 +62,7 @@ it('tests sort functions', ()=>{
   expect(sortedByGender[3].gender).toEqual('male')
 })
 
-it('tests every functions', ()=>{
+it('tests "every" functions', ()=>{
   // Testing blueEyesCheck function
   let allBlueEyes = blueEyesCheck(characters)
   expect(allBlueEyes).toBe(false)
@@ -78,4 +78,22 @@ it('tests every functions', ()=>{
   // Testing allMaleCheck function
   let allMale = allMaleCheck(characters)
   expect(allMale).toBe(false)
+})
+
+it('tests "some" functions', ()=>{
+  // Testing atLeastOneMale function
+  let oneMale = atLeastOneMale(characters)
+  expect(oneMale).toBe(true)
+
+  // Testing atLeastOneBlueEyes function
+  let blueEyes = atLeastOneBlueEyes(characters)
+  expect(blueEyes).toBe(true)
+
+  // Testing oneTallerThan210 function
+  let tallerThan210 = oneTallerThan210(characters)
+  expect(tallerThan210).toBe(false)
+
+  // Testing massLessThan50 function
+  let massUnder50 = oneMassLessThan50(characters)
+  expect(massUnder50).toBe(true)
 })

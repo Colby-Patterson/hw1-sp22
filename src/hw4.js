@@ -90,9 +90,41 @@ function getFemaleChars(people){
 
 //***SORT***
 //1. Sort by mass
+function sortByMass(characters){
+  return characters.sort((a, b)=> {
+    return a.mass - b.mass
+  })
+}
 //2. Sort by height
+function sortByHeight(characters){
+  return characters.sort((a, b)=> {
+    return a.height - b.height
+  })
+}
 //3. Sort by name
+function sortByName(characters){
+  return characters.sort((a, b)=> {
+    if (a.name > b.name){
+      return 1
+    }
+    if (a.name < b.name){
+      return -1
+    }
+    return 0
+  })
+}
 //4. Sort by gender
+function sortByGender(characters){
+  return characters.sort((a, b)=> {
+    if (a.gender > b.gender){
+      return 1
+    }
+    if (a.gender < b.gender){
+      return -1
+    }
+    return 0
+  })
+}
 
 //***EVERY***
 //1. Does every character have blue eyes?
@@ -118,5 +150,9 @@ module.exports = {
   massOver100,
   heightUnder200,
   getMaleChars,
-  getFemaleChars
+  getFemaleChars,
+  sortByMass,
+  sortByHeight,
+  sortByName,
+  sortByGender
 };

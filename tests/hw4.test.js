@@ -1,4 +1,4 @@
-const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars } = require("../src/hw4.js");
+const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender } = require("../src/hw4.js");
 
 it('tests map functions', ()=>{
   // Testing getNames function
@@ -38,4 +38,26 @@ it('tests filter functions', ()=>{
   // Testing getFemaleChars function
   let femaleChars = getFemaleChars(characters)
   expect(femaleChars.length).toBe(1)
+})
+
+it('tests sort functions', ()=>{
+  // Testing sortByMass function
+  let sortedByMass = sortByMass(characters)
+  expect(sortedByMass[0].name).toBe('Leia Organa')
+  expect(sortedByMass[3].name).toBe('Darth Vader')
+
+  // Testing sortByHeight function
+  let sortedByHeight = sortByHeight(characters)
+  expect(sortedByHeight[0].name).toBe('Leia Organa')
+  expect(sortedByHeight[3].name).toBe('Darth Vader')
+
+  // Testing sortByName function
+  let sortedByName = sortByName(characters)
+  expect(sortedByName[0].name).toBe('Anakin Skywalker')
+  expect(sortedByName[3].name).toBe('Luke Skywalker')
+
+  // Testing sortByGender function
+  let sortedByGender = sortByGender(characters)
+  expect(sortedByGender[0].gender).toEqual('female')
+  expect(sortedByGender[3].gender).toEqual('male')
 })

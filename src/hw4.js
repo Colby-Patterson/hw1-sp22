@@ -52,7 +52,6 @@ function getNamesandHeights(people){
 function getFirstNames(people){
   return people.map(person=>{
     let split_name = person.name.split(' ')
-    console.log(split_name[0])
     return split_name[0]
   })
 }

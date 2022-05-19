@@ -64,9 +64,29 @@ function getFirstNames(people){
 
 //***FILTER***
 //1. Get characters with mass greater than 100
+function massOver100(people){
+  return people.filter(person=>{
+    return person.mass > 100
+  })
+}
 //2. Get characters with height less than 200
+function heightUnder200(people){
+  return people.filter(person=>{
+    return person.height < 200
+  })
+}
 //3. Get all male characters
+function getMaleChars(people){
+  return people.filter(person=>{
+    return person.gender === 'male'
+  })
+}
 //4. Get all female characters
+function getFemaleChars(people){
+  return people.filter(person=>{
+    return person.gender === 'female'
+  })
+}
 
 //***SORT***
 //1. Sort by mass
@@ -94,5 +114,9 @@ module.exports = {
   getNames,
   getHeights,
   getNamesandHeights,
-  getFirstNames
+  getFirstNames,
+  massOver100,
+  heightUnder200,
+  getMaleChars,
+  getFemaleChars
 };

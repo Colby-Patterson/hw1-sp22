@@ -1,4 +1,4 @@
-const { characters, getNames, getHeights, getNamesandHeights, getFirstNames } = require("../src/hw4.js");
+const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars } = require("../src/hw4.js");
 
 it('tests map functions', ()=>{
   // Testing getNames function
@@ -20,4 +20,22 @@ it('tests map functions', ()=>{
   let charFirstNames = getFirstNames(characters)
   expect(charFirstNames[0]).toBe('Luke')
   expect(charFirstNames[1]).toBe('Darth')
+})
+
+it('tests filter functions', ()=>{
+  // Testing massOver100 function
+  let charMassOver100 = massOver100(characters)
+  expect(charMassOver100.length).toBe(1)
+
+  // Testing heightUnder200 function
+  let charHeightUnder200 = heightUnder200(characters)
+  expect(charHeightUnder200.length).toBe(3)
+
+  // Testing getMaleChars function
+  let maleChars = getMaleChars(characters)
+  expect(maleChars.length).toBe(3)
+
+  // Testing getFemaleChars function
+  let femaleChars = getFemaleChars(characters)
+  expect(femaleChars.length).toBe(1)
 })

@@ -31,9 +31,31 @@ const characters = [
 
 //***MAP***
 //1. Get array of all names
+function getNames(people) {
+  return people.map(person=>{
+    return person.name
+  })
+}
 //2. Get array of all heights
+function getHeights(people) {
+  return people.map(person=>{
+    return person.height
+  })
+}
 //3. Get array of objects with just name and height properties
+function getNamesandHeights(people){
+  return people.map(person=>{
+    return [person.name, person.height]
+  })
+}
 //4. Get array of all first names
+function getFirstNames(people){
+  return people.map(person=>{
+    let split_name = person.name.split(' ')
+    console.log(split_name[0])
+    return split_name[0]
+  })
+}
 
 //***REDUCE***
 //1. Get total mass of all characters
@@ -67,3 +89,11 @@ const characters = [
 
 //***Bonus***/
 // come up with your own
+
+module.exports = {
+  characters,
+  getNames,
+  getHeights,
+  getNamesandHeights,
+  getFirstNames
+};

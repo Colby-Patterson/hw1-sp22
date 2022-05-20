@@ -1,4 +1,4 @@
-const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck, atLeastOneMale, atLeastOneBlueEyes, oneTallerThan210, oneMassLessThan50, totalMass, totalHeight } = require("../src/hw4.js");
+const { characters, getNames, getHeights, getNamesandHeights, getFirstNames, massOver100, heightUnder200, getMaleChars, getFemaleChars, sortByMass, sortByHeight, sortByName, sortByGender, blueEyesCheck, massOver40Check, heightUnder200Check, allMaleCheck, atLeastOneMale, atLeastOneBlueEyes, oneTallerThan210, oneMassLessThan50, totalMass, totalHeight, byEyeColor } = require("../src/hw4.js");
 
 it('tests map functions', ()=>{
   // Testing getNames function
@@ -106,4 +106,7 @@ it('tests reduce functions', ()=>{
   //Testing totalHeight function
   let totalHeightOfCharacters = totalHeight(characters)
   expect(totalHeightOfCharacters).toBe(712)
+
+  let characterEyeColorCount = byEyeColor(characters)
+  expect(characterEyeColorCount).toEqual({ blue: 2, yellow: 1, brown: 1 })
 })

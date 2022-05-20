@@ -71,10 +71,18 @@ function totalHeight(people){
 }
 //3. Get total number of characters by eye color
 function byEyeColor(people){
+  return people.reduce(function(accum, current) {
+    let eyeColor = current.eye_color
+    accum[eyeColor] += 1
+    return accum
+  }, {blue: 0, yellow: 0, brown: 0})
+}
+console.log(byEyeColor(characters))
+
+//4. Get total number of characters in all the character names
+function totalCharsInNames(people){
   
 }
-//4. Get total number of characters in all the character names
-
 //***FILTER***
 //1. Get characters with mass greater than 100
 function massOver100(people){
@@ -217,5 +225,6 @@ module.exports = {
   oneTallerThan210,
   oneMassLessThan50,
   totalMass,
-  totalHeight
+  totalHeight,
+  byEyeColor
 };

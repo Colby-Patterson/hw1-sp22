@@ -77,12 +77,15 @@ function byEyeColor(people){
     return accum
   }, {blue: 0, yellow: 0, brown: 0})
 }
-console.log(byEyeColor(characters))
-
 //4. Get total number of characters in all the character names
 function totalCharsInNames(people){
-  
+  return people.reduce(function(accum, current) {
+    let nameChars = current.name.split('').length - 1
+    accum += nameChars
+    return accum
+  }, 0)
 }
+
 //***FILTER***
 //1. Get characters with mass greater than 100
 function massOver100(people){
@@ -226,5 +229,6 @@ module.exports = {
   oneMassLessThan50,
   totalMass,
   totalHeight,
-  byEyeColor
+  byEyeColor,
+  totalCharsInNames
 };
